@@ -83,14 +83,22 @@ public class TestLoanClassTemplate {
 	  double totalInterest = 0.0;
 	  
 	  while (myLoanAmount >= (myMonthlyPayment + extraPay)) {
-		  // to do A2 same as A1
-		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
-		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
-		  // caculate the new myLoanAmount after minus this month's principal, then minus extra payment
-		  // add the interest paid this month to totalInterest
-		  // increment the month count
+		  // calculate interest for this month
+    interest = myLoanAmount * myMonthlyInterestRate;
 
-	  }
+    // calculate principal paid
+    principal = myMonthlyPayment - interest;
+
+    // reduce loan balance (principal + extra payment)
+    myLoanAmount = myLoanAmount - principal - extraPay;
+
+    // add this month's interest
+    totalInterest += interest;
+
+    // count the month
+    month++;
+}
+	  
 	  while (myLoanAmount >= myMonthlyPayment) {
 		  // to do B2 same as B1
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
