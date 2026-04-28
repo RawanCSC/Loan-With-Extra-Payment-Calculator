@@ -54,6 +54,27 @@ public class TestLoanClassTemplate {
 	  double principal = 0.0;
 	  double totalInterest = 0.0;
 
+	  // The first month. 
+	  // Subtract the myMonthlyPayment and the extraPay from the principle and calcualating the new myLoanAmount. 
+	  
+	  for (int i = 0; i < 1; i++) {
+	  // Caculate the first month's interest based on myLoanAmount and myMonthlyInterestRate.
+	  intrest = myLoanAmount * ( myMonthlyInterestRate / 12 );
+	  
+	  // calculate principal paid
+	  principal = myMonthlyPayment - interest;
+	  
+	  // reduce loan balance (principal + extra payment)
+      myLoanAmount = myLoanAmount - principal - extraPay;
+
+      // add this month's interest
+      totalInterest += interest;
+
+      // count the month
+      month++;
+	  }
+	  
+	  
 	  while (myLoanAmount >= myMonthlyPayment) {
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
 		  intrest = myLoanAmount * ( myMonthlyInterestRate / 12 ); 
