@@ -59,7 +59,7 @@ public class TestLoanClassTemplate {
 	  
 	  for (int i = 0; i < 1; i++) {
 	  // Caculate the first month's interest based on myLoanAmount and myMonthlyInterestRate.
-	  interest = myLoanAmount * ( myMonthlyInterestRate / 12 );
+	  interest = myLoanAmount * myMonthlyInterestRate;
 	  
 	  // calculate principal paid
 	  principal = myMonthlyPayment - interest;
@@ -90,7 +90,7 @@ public class TestLoanClassTemplate {
 	  }
 	  if (myLoanAmount < myMonthlyPayment) {
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
-		  interest = myLoanAmount * ( myMonthlyInterestRate / 12 );
+		  interest = myLoanAmount * myMonthlyInterestRate;
 		  // add the interest paid this month to totalInterest
 		  totalInterest += interest;
 		  // increment the month count
@@ -150,7 +150,7 @@ public class TestLoanClassTemplate {
 	  if (myLoanAmount < myMonthlyPayment) {
 		  // to do
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
-		  interest = myLoanAmount * ( myMonthlyInterestRate / 12 );
+		  interest = myLoanAmount * myMonthlyInterestRate;
 		  // add the interest paid this month to totalInterest
 		  totalInterest += interest;
 		  // increment the month count
