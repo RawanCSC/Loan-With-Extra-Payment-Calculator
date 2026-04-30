@@ -1,4 +1,4 @@
-package groupproject2025;
+// package groupproject2025;
 // LiveExample 10.1
 import java.util.Scanner;
 
@@ -9,21 +9,21 @@ public class TestLoanClassTemplate {
     Scanner input = new Scanner(System.in);
 
     // Enter yearly interest rate
-    System.out.print(
+    System.out.println(
       "Enter annual interest rate, for example, 8.25: ");
     double annualInterestRate = input.nextDouble();
 
     // Enter number of years
-    System.out.print("Enter number of years as an integer: ");
+    System.out.println("Enter number of years as an integer: ");
     int numberOfYears = input.nextInt();
 
     // Enter loan amount
-    System.out.print("Enter loan amount, for example, 120000.95: ");
+    System.out.println("Enter loan amount, for example, 120000.95: ");
     double loanAmount =  input.nextDouble();
     
     //11/9
     // Enter extra payment amount
-    System.out.print("Enter extra payment amount, for example, 1000.00: ");
+    System.out.println("Enter extra payment amount, for example, 1000.00: ");
     double extraPaymentAmount =  input.nextDouble();
 
     // Create Loan object
@@ -54,6 +54,27 @@ public class TestLoanClassTemplate {
 	  double principal = 0.0;
 	  double totalInterest = 0.0;
 
+	  // The first month. 
+	  // Subtract the myMonthlyPayment and the extraPay from the principle and calcualating the new myLoanAmount. 
+	  
+	  for (int i = 0; i < 1; i++) {
+	  // Caculate the first month's interest based on myLoanAmount and myMonthlyInterestRate.
+	  interest = myLoanAmount * myMonthlyInterestRate;
+	  
+	  // calculate principal paid
+	  principal = myMonthlyPayment - interest;
+	  
+	  // reduce loan balance (principal + extra payment)
+      myLoanAmount = myLoanAmount - principal - extraPay;
+
+      // add this month's interest
+      totalInterest += interest;
+
+      // count the month
+      month++;
+	  }
+	  
+	  
 	  while (myLoanAmount >= myMonthlyPayment) {
 		 interest = myLoanAmount * myMonthlyInterestRate;
          principal = myMonthlyPayment - interest;
@@ -109,7 +130,7 @@ public class TestLoanClassTemplate {
 
     // count the month
     month++;
-}
+	}
 	  
 	  while (myLoanAmount >= myMonthlyPayment) {
 		  interest = myLoanAmount * myMonthlyInterestRate;
